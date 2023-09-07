@@ -29,12 +29,15 @@ public abstract class ARObjectTracked : MonoBehaviour
 
     private void Start()
     {
-        spawnedPrefab = Instantiate(Resources.Load("VideoUIPrefab"), transform.position + offset, transform.rotation, this.transform) as GameObject;
+        spawnedPrefab = Instantiate(Resources.Load("VideoUIPrefab"), transform.position + offset, Quaternion.identity, this.transform) as GameObject;
+        //var rotationDifference = Camera.main.transform.eulerAngles - transform.eulerAngles;
+        //spawnedPrefab.transform.Rotate(rotationDifference);
     }
     private void Update()
     {
         if (spawnedPrefab == null)
             return;
+
         spawnedPrefab.transform.position = transform.position + offset;
     }
 
@@ -44,13 +47,11 @@ public abstract class ARObjectTracked : MonoBehaviour
 public struct ARObjectOptions : IARObjectOptions
 {
     public string OptionName { get; private set; }
-    public string OptionDescription { get; private set; }
     public Action OptionAction { get; private set; }
     public string OptionIcon { get; private set; }
-    public ARObjectOptions(string name, string Desc, string iconPath, Action action)
+    public ARObjectOptions(string name, string iconPath, Action action)
     {
         OptionName = name;
-        OptionDescription = Desc;
         OptionIcon = iconPath;
         OptionAction = action;
     }
@@ -71,7 +72,6 @@ public struct ARObjectOptions : IARObjectOptions
 public interface IARObjectOptions
 {
     string OptionName { get; }
-    string OptionDescription { get; }
     string OptionIcon { get; }
     Action OptionAction { get; }
 }
