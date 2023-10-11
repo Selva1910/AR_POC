@@ -31,7 +31,9 @@ public class Scenario1 : MonoBehaviour
 
     private void MoveNextScene()
     {
-        SceneManager.LoadScene("AR_Viewer");
+        SceneManager.LoadScene("AR_Viewer_Wiki");
+        //SceneManager.LoadScene("AR_Viewer");
+
     }
 
 }

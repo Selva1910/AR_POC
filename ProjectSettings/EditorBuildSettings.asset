@@ -5,29 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/BlankAR.unity
-    guid: 6bdce89659816455b9f906fc62d19910
-  - enabled: 0
-    path: Assets/Samples/Wikitude SDK Extension - AR Foundation/9.13.0/Samples/Scenes/AR
-      Foundation - Multiple Trackers.unity
-    guid: 37bae2651c173475ca96fe210b83e2de
   - enabled: 1
     path: Assets/Scenes/Scene01.unity
     guid: 89aa4c5e5824755429589893a230a71d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AR_Viewer.unity
     guid: 2e7d1ac0214569e479e30edeb521e4a0
   - enabled: 1
     path: Assets/Scenes/Scene02.unity
     guid: a6f107f902109f64d912b5d8d1895776
   - enabled: 0
-    path: Assets/Scenes/AR_Viewer 1.unity
-    guid: 97b5530dcd1543842a93e009b39c0266
-  - enabled: 0
-    path: Assets/Samples/Wikitude SDK Extension - AR Foundation/9.13.0/Samples/Scenes/AR
-      Foundation - Alignment Initialization.unity
-    guid: a51fca291d43c4e9984a569256de1f24
+    path: Assets/Samples/Wikitude SDK Core/9.13.0/Samples/Scenes/AR Bridge - Plane
+      Detection.unity
+    guid: ef07a3e6979e740eab87439828c54575
+  - enabled: 1
+    path: Assets/Scenes/AR_Viewer_Wiki.unity
+    guid: 5fb3ef8ef77e74d158206baf5190937c
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}

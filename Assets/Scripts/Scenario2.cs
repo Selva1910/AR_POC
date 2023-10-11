@@ -8,19 +8,24 @@ using UnityEngine.Video;
 
 public class Scenario2 : MonoBehaviour
 {
-    [SerializeField] private Button nextButton;
+    [SerializeField] private Button startButton;
+    [SerializeField] private Button exitButton;
+
     [SerializeField] private VideoPlayer videoPlayer;
     void Start()
     {
-        nextButton.gameObject.SetActive(false);
-        nextButton.onClick.AddListener(MoveNextScene);
+        startButton.gameObject.SetActive(false);
+        exitButton.gameObject.SetActive(false);
+        startButton.onClick.AddListener(MoveNextScene);
+        exitButton.onClick.AddListener(() => Application.Quit());
         videoPlayer.loopPointReached += ShowStart;
     }
 
     private void ShowStart(VideoPlayer source)
     {
         source.Pause();
-        nextButton.gameObject.SetActive(true);
+        startButton.gameObject.SetActive(true);
+        exitButton.gameObject.SetActive(true);
     }
 
     private void Update()
@@ -31,7 +36,8 @@ public class Scenario2 : MonoBehaviour
 
     private void MoveNextScene()
     {
-        SceneManager.LoadScene("AR_Viewer");
+        SceneManager.LoadScene("AR_Viewer_Wiki");
+        //SceneManager.LoadScene("AR_Viewer");
     }
 
 }
